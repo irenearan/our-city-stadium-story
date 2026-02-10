@@ -5,7 +5,6 @@ const VisionSection = () => {
   return (
     <section className="relative overflow-hidden py-32">
       <div className="mx-auto max-w-7xl px-6">
-        {/* Intro text */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -14,21 +13,20 @@ const VisionSection = () => {
           className="mb-24 max-w-3xl"
         >
           <p className="mb-4 font-body text-sm font-medium uppercase tracking-[0.3em] text-primary">
-            The Vision
+            La Visión
           </p>
           <h2 className="font-display text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
-            Not just concrete and steel.{" "}
-            <span className="text-gradient-gold">A heartbeat.</span>
+            No es solo hormigón y acero.{" "}
+            <span className="text-gradient-gold">Es un latido.</span>
           </h2>
           <p className="mt-8 max-w-2xl font-body text-lg font-light leading-relaxed text-muted-foreground">
-            Every great city has a gathering place — a space where strangers become
-            neighbors and a roar becomes a chorus. This stadium will be that place.
-            Designed to serve the community 365 days a year, it rises not as a monument to 
-            sport alone, but as a catalyst for connection.
+            Toda gran ciudad tiene un lugar de encuentro — un espacio donde los desconocidos
+            se vuelven vecinos y un rugido se convierte en coro. Este estadio será ese lugar.
+            Diseñado para servir a la comunidad los 365 días del año, se erige no como un monumento
+            al deporte, sino como un catalizador de conexión.
           </p>
         </motion.div>
 
-        {/* Blueprint image */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -38,29 +36,28 @@ const VisionSection = () => {
         >
           <img
             src={blueprintImage}
-            alt="Stadium architectural blueprint with golden wireframe lines"
+            alt="Plano arquitectónico del estadio con líneas doradas"
             className="w-full"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
         </motion.div>
 
-        {/* Key pillars */}
         <div className="mt-24 grid gap-12 md:grid-cols-3">
           {[
             {
               number: "01",
-              title: "Community First",
-              desc: "Public plazas, green corridors, and open-air markets activate the grounds year-round — not just on match days.",
+              title: "La Comunidad Primero",
+              desc: "Plazas públicas, corredores verdes y mercados al aire libre activan el recinto todo el año — no solo los días de partido.",
             },
             {
               number: "02",
-              title: "Sustainable by Design",
-              desc: "Net-zero carbon operations. Rainwater harvesting. Solar canopy. A stadium that gives back more than it takes.",
+              title: "Sostenible por Diseño",
+              desc: "Operaciones con cero emisiones netas. Captación de agua de lluvia. Cubierta solar. Un estadio que devuelve más de lo que consume.",
             },
             {
               number: "03",
-              title: "Economic Engine",
-              desc: "12,000 permanent jobs. A new transit hub. Revitalized neighborhoods. The ripple effect will reshape the city.",
+              title: "Motor Económico",
+              desc: "12.000 empleos permanentes. Un nuevo nodo de transporte. Barrios revitalizados. El efecto dominó transformará la ciudad.",
             },
           ].map((pillar, i) => (
             <motion.div
