@@ -2,20 +2,19 @@ import { motion } from "framer-motion";
 import interiorImage from "@/assets/stadium-interior.jpg";
 
 const stats = [
-  { value: "65,000", label: "Seats" },
-  { value: "12,000", label: "Jobs Created" },
-  { value: "365", label: "Days of Activity" },
-  { value: "Net Zero", label: "Carbon Target" },
+  { value: "65.000", label: "Asientos" },
+  { value: "12.000", label: "Empleos Creados" },
+  { value: "365", label: "Días de Actividad" },
+  { value: "Cero Neto", label: "Objetivo de Carbono" },
 ];
 
 const StatsSection = () => {
   return (
     <section className="relative overflow-hidden py-32">
-      {/* Background */}
       <div className="absolute inset-0">
         <img
           src={interiorImage}
-          alt="Stadium interior filled with fans under golden sunset"
+          alt="Interior del estadio lleno de aficionados bajo un atardecer dorado"
           className="h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-background/85" />
@@ -30,11 +29,11 @@ const StatsSection = () => {
           className="mb-20 text-center"
         >
           <p className="mb-4 font-body text-sm font-medium uppercase tracking-[0.3em] text-primary">
-            The Impact
+            El Impacto
           </p>
           <h2 className="font-display text-4xl font-bold md:text-5xl lg:text-6xl">
-            Numbers that{" "}
-            <span className="text-gradient-gold">speak volumes.</span>
+            Cifras que{" "}
+            <span className="text-gradient-gold">hablan por sí solas.</span>
           </h2>
         </motion.div>
 
