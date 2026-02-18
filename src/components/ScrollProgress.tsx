@@ -1,6 +1,7 @@
 import { motion, useScroll, useSpring } from "framer-motion";
 
 const sectionLabels = [
+  "Inicio",
   "Origen",
   "Evolución",
   "Visión",
@@ -18,13 +19,13 @@ const ScrollProgress = () => {
   return (
     <>
       <motion.div
-        className="fixed top-0 left-0 right-0 z-50 h-[2px] origin-left bg-primary"
+        className="fixed top-0 left-0 right-0 z-50 h-[3px] origin-left bg-primary"
         style={{ scaleX: scaleY }}
       />
 
-      <nav className="fixed right-6 top-1/2 z-50 hidden -translate-y-1/2 flex-col gap-5 md:flex">
+      <nav className="fixed right-6 top-1/2 z-50 hidden -translate-y-1/2 flex-col gap-4 md:flex">
         {sectionLabels.map((label, i) => {
-          const id = i === 6 ? "section-profile" : `section-${i}`;
+          const id = i === 0 ? "section-billboard" : i === 7 ? "section-profile" : `section-${i - 1}`;
           return (
             <a
               key={label}
@@ -32,10 +33,10 @@ const ScrollProgress = () => {
               className="group flex items-center gap-3"
               title={label}
             >
-              <span className="text-[10px] font-medium uppercase tracking-widest text-muted-foreground opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <span className="font-display text-[9px] font-bold uppercase tracking-widest text-muted-foreground opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 {label}
               </span>
-              <span className="block h-2 w-2 rounded-full border border-muted-foreground/40 bg-transparent transition-all duration-300 group-hover:scale-150 group-hover:border-primary group-hover:bg-primary" />
+              <span className="block h-2 w-2 rounded-full border border-muted-foreground/30 bg-transparent transition-all duration-300 group-hover:scale-150 group-hover:border-primary group-hover:bg-primary" />
             </a>
           );
         })}

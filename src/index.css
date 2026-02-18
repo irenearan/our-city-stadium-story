@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,46 +6,55 @@
 
 @layer base {
   :root {
-    --background: 160 30% 4%;
-    --foreground: 0 0% 98%;
+    /* Betis Official Palette */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
 
-    --card: 160 25% 7%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 10%;
 
-    --popover: 160 25% 7%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
 
-    --primary: 155 78% 25%;
-    --primary-foreground: 0 0% 98%;
+    /* Betis Green: #009B48 → hsl(152, 100%, 30%) */
+    --primary: 152 100% 30%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 160 20% 12%;
-    --secondary-foreground: 0 0% 90%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 20%;
 
-    --muted: 160 15% 16%;
-    --muted-foreground: 160 10% 50%;
+    --muted: 0 0% 93%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 42 70% 55%;
-    --accent-foreground: 160 30% 4%;
+    /* Gold accent: #C8A951 */
+    --accent: 43 52% 55%;
+    --accent-foreground: 0 0% 10%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 160 15% 14%;
-    --input: 160 15% 14%;
-    --ring: 155 78% 25%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 152 100% 30%;
 
-    --radius: 0.5rem;
+    --radius: 0.375rem;
 
-    --sidebar-background: 160 25% 7%;
-    --sidebar-foreground: 0 0% 90%;
-    --sidebar-primary: 155 78% 25%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 160 20% 12%;
-    --sidebar-accent-foreground: 0 0% 90%;
-    --sidebar-border: 160 15% 14%;
-    --sidebar-ring: 155 78% 25%;
+    /* Dark variant for immersive sections */
+    --bg-dark: 150 20% 8%;
+    --fg-dark: 0 0% 95%;
+    --border-dark: 150 15% 18%;
+    --muted-dark: 150 10% 35%;
 
-    --font-display: 'DM Serif Display', Georgia, serif;
+    --sidebar-background: 152 100% 30%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 152 100% 30%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 152 80% 25%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 152 80% 25%;
+    --sidebar-ring: 152 100% 30%;
+
+    --font-display: 'Montserrat', 'Inter', system-ui, sans-serif;
     --font-body: 'Inter', system-ui, sans-serif;
   }
 }
@@ -69,38 +78,93 @@
   }
 }
 
+/* Immersive dark section overrides */
+.section-dark {
+  --background: 150 20% 8%;
+  --foreground: 0 0% 95%;
+  --card: 150 18% 12%;
+  --card-foreground: 0 0% 95%;
+  --border: 150 15% 18%;
+  --muted: 150 15% 20%;
+  --muted-foreground: 150 10% 55%;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+/* Green section (Betis branded) */
+.section-green {
+  --background: 152 100% 30%;
+  --foreground: 0 0% 100%;
+  --muted-foreground: 152 40% 80%;
+  --border: 152 80% 40%;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
 @layer utilities {
   .text-gradient-green {
-    background: linear-gradient(135deg, hsl(155 78% 35%), hsl(155 60% 50%), hsl(155 78% 35%));
+    background: linear-gradient(135deg, hsl(152 100% 30%), hsl(152 80% 42%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .text-gradient-gold {
-    background: linear-gradient(135deg, hsl(42 70% 55%), hsl(38 85% 65%), hsl(42 70% 55%));
+    background: linear-gradient(135deg, hsl(43 52% 55%), hsl(40 65% 60%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .bg-gradient-dark {
-    background: linear-gradient(180deg, hsl(160 30% 4%) 0%, hsl(160 25% 8%) 100%);
+    background: linear-gradient(180deg, hsl(150 20% 8%) 0%, hsl(150 18% 12%) 100%);
   }
 
   .bg-gradient-section {
-    background: linear-gradient(180deg, hsl(160 25% 7%) 0%, hsl(160 30% 4%) 100%);
+    background: linear-gradient(180deg, hsl(0 0% 98%) 0%, hsl(0 0% 96%) 100%);
   }
 
   .border-gold {
-    border-color: hsl(42 70% 55% / 0.3);
+    border-color: hsl(43 52% 55% / 0.3);
   }
 
   .glow-green {
-    box-shadow: 0 0 40px hsl(155 78% 25% / 0.2), 0 0 80px hsl(155 78% 25% / 0.05);
+    box-shadow: 0 0 40px hsl(152 100% 30% / 0.2), 0 0 80px hsl(152 100% 30% / 0.05);
   }
 
   .glow-gold {
-    box-shadow: 0 0 40px hsl(42 70% 55% / 0.15), 0 0 80px hsl(42 70% 55% / 0.05);
+    box-shadow: 0 0 40px hsl(43 52% 55% / 0.15), 0 0 80px hsl(43 52% 55% / 0.05);
+  }
+
+  /* Betis button styles */
+  .btn-betis {
+    @apply inline-flex items-center justify-center rounded-md px-7 py-3.5 font-body text-xs font-bold uppercase tracking-[0.15em] transition-all duration-300;
+  }
+
+  .btn-betis-primary {
+    @apply btn-betis text-white;
+    background-color: hsl(152 100% 30%);
+  }
+  .btn-betis-primary:hover {
+    background-color: hsl(152 100% 25%);
+    box-shadow: 0 4px 20px hsl(152 100% 30% / 0.3);
+  }
+
+  .btn-betis-outline {
+    @apply btn-betis border-2;
+    border-color: hsl(152 100% 30%);
+    color: hsl(152 100% 30%);
+  }
+  .btn-betis-outline:hover {
+    background-color: hsl(152 100% 30%);
+    color: white;
+  }
+
+  .btn-betis-white {
+    @apply btn-betis border-2 border-white/40 text-white;
+  }
+  .btn-betis-white:hover {
+    background-color: white;
+    color: hsl(152 100% 30%);
   }
 }
