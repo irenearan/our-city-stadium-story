@@ -17,24 +17,15 @@ const SectionProject = () => {
     <section
       id="section-3"
       ref={ref}
-      className="relative flex min-h-screen items-center overflow-hidden"
+      className="relative flex min-h-screen items-center overflow-hidden bg-white"
     >
-      <div className="absolute inset-0">
-        <img
-          src={stadiumHospitality}
-          alt="Zona hospitality del nuevo estadio"
-          className="h-full w-full object-cover opacity-20"
-        />
-        <div className="absolute inset-0 bg-gradient-to-l from-background via-background/75 to-background/50" />
-      </div>
-
       <div className="relative z-10 mx-auto grid w-full max-w-7xl gap-16 px-6 py-32 lg:grid-cols-2 lg:px-16">
         <div>
           <motion.p
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-4 font-body text-xs font-semibold uppercase tracking-[0.4em] text-primary"
+            className="mb-4 font-display text-xs font-bold uppercase tracking-[0.3em] text-primary"
           >
             Capítulo IV — El Proyecto
           </motion.p>
@@ -43,11 +34,11 @@ const SectionProject = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1, delay: 0.4 }}
-            className="font-display text-4xl leading-[1.1] md:text-5xl lg:text-6xl"
+            className="font-display text-4xl font-extrabold uppercase leading-[1.1] tracking-tight text-foreground md:text-5xl lg:text-6xl"
           >
             Arquitectura
             <br />
-            <span className="text-gradient-gold">con propósito.</span>
+            <span className="text-primary">con propósito.</span>
           </motion.h2>
 
           <motion.p
@@ -60,6 +51,16 @@ const SectionProject = () => {
             <br />
             Cada espacio tiene intención.
           </motion.p>
+
+          {/* Image card */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.9 }}
+            className="mt-8 overflow-hidden rounded-xl shadow-lg"
+          >
+            <img src={stadiumHospitality} alt="Zona hospitality" className="h-56 w-full object-cover" />
+          </motion.div>
         </div>
 
         <div className="flex flex-col justify-center gap-6">
@@ -67,7 +68,7 @@ const SectionProject = () => {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground"
+            className="font-display text-xs font-bold uppercase tracking-[0.25em] text-muted-foreground"
           >
             Diseñado para
           </motion.p>
@@ -81,7 +82,7 @@ const SectionProject = () => {
               className="flex items-center gap-4 border-l-2 border-primary/30 py-3 pl-6 transition-colors duration-300 hover:border-primary"
             >
               <span className="text-2xl">{p.icon}</span>
-              <span className="text-base font-light text-foreground/90 md:text-lg">
+              <span className="text-base font-medium text-foreground/80 md:text-lg">
                 {p.text}
               </span>
             </motion.div>

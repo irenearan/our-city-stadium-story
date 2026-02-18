@@ -26,33 +26,29 @@ const SectionBillboard = () => {
           style={{ y: textY, opacity: textOpacity }}
           className="flex flex-col justify-center"
         >
-          {/* Green accent bar — Betis style */}
           <motion.div
             initial={{ width: 0 }}
             animate={{ width: 48 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-6 h-1 rounded-full"
-            style={{ backgroundColor: "#009B48" }}
+            className="mb-6 h-1 rounded-full bg-primary"
           />
 
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.3 }}
-            className="font-body text-[3.2rem] font-extrabold uppercase leading-[1.05] tracking-tight md:text-6xl lg:text-7xl"
-            style={{ color: "#1A1A1A" }}
+            className="font-display text-[3.2rem] font-extrabold uppercase leading-[1.05] tracking-tight text-foreground md:text-6xl lg:text-7xl"
           >
             Nuevo Estadio
             <br />
-            <span style={{ color: "#009B48" }}>Benito Villamarín</span>
+            <span className="text-primary">Benito Villamarín</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.6 }}
-            className="mt-5 max-w-md font-body text-base font-medium leading-relaxed md:text-lg"
-            style={{ color: "#333" }}
+            className="mt-5 max-w-md font-body text-base font-medium leading-relaxed text-foreground/80 md:text-lg"
           >
             Un nuevo icono para Sevilla.
             <br />
@@ -63,8 +59,7 @@ const SectionBillboard = () => {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.85 }}
-            className="mt-5 max-w-md space-y-0.5 font-body text-sm font-normal leading-relaxed"
-            style={{ color: "#666" }}
+            className="mt-5 max-w-md space-y-0.5 font-body text-sm font-normal leading-relaxed text-muted-foreground"
           >
             <p>Más que una transformación arquitectónica.</p>
             <p>Una declaración de ambición.</p>
@@ -72,25 +67,16 @@ const SectionBillboard = () => {
             <p>Un legado para las próximas generaciones.</p>
           </motion.div>
 
-          {/* Buttons — Betis official style */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 1.1 }}
             className="mt-8 flex flex-wrap gap-3"
           >
-            <a
-              href="#section-0"
-              className="inline-flex items-center rounded-md px-7 py-3.5 font-body text-xs font-bold uppercase tracking-[0.15em] text-white transition-all duration-300 hover:brightness-110 hover:shadow-lg"
-              style={{ backgroundColor: "#009B48" }}
-            >
+            <a href="#section-0" className="btn-betis-primary">
               Descubrir el proyecto
             </a>
-            <a
-              href="#section-5"
-              className="inline-flex items-center rounded-md border-2 px-7 py-3.5 font-body text-xs font-bold uppercase tracking-[0.15em] transition-all duration-300 hover:bg-[#009B48] hover:text-white"
-              style={{ borderColor: "#009B48", color: "#009B48" }}
-            >
+            <a href="#section-5" className="btn-betis-outline">
               Explorar oportunidades
             </a>
           </motion.div>
@@ -108,12 +94,7 @@ const SectionBillboard = () => {
             src={stadiumExterior}
             alt="Render exterior del Nuevo Estadio Benito Villamarín"
             className="h-full w-full object-cover"
-            style={{
-              scale: imgScale,
-              y: imgY,
-              minHeight: "400px",
-              maxHeight: "560px",
-            }}
+            style={{ scale: imgScale, y: imgY, minHeight: "400px", maxHeight: "560px" }}
           />
         </motion.div>
       </div>
@@ -128,10 +109,9 @@ const SectionBillboard = () => {
         <motion.div
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="h-7 w-px"
-          style={{ backgroundColor: "#009B48" }}
+          className="h-7 w-px bg-primary"
         />
-        <span className="font-body text-[10px] font-semibold uppercase tracking-[0.25em]" style={{ color: "#999" }}>
+        <span className="font-body text-[10px] font-semibold uppercase tracking-[0.25em] text-muted-foreground">
           Scroll
         </span>
       </motion.div>

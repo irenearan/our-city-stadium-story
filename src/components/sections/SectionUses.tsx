@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import eventsImg from "@/assets/betis-events.jpg";
+import stadiumMatchday from "@/assets/stadium-matchday.jpg";
 import ContactModal from "@/components/ContactModal";
 
 const uses = [
@@ -26,33 +26,15 @@ const SectionUses = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalInterest, setModalInterest] = useState("");
 
-  const openModal = (interest: string) => {
-    setModalInterest(interest);
-    setModalOpen(true);
-  };
-
   return (
     <>
-      <section
-        id="section-5"
-        ref={ref}
-        className="relative flex min-h-screen flex-col items-center overflow-hidden"
-      >
-        <div className="absolute inset-0">
-          <img
-            src={eventsImg}
-            alt="Evento en el interior del estadio"
-            className="h-full w-full object-cover opacity-25"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background" />
-        </div>
-
+      <section id="section-5" ref={ref} className="relative flex min-h-screen flex-col items-center overflow-hidden bg-white">
         <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center px-6 py-32 text-center lg:px-16">
           <motion.p
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-4 font-body text-xs font-semibold uppercase tracking-[0.4em] text-primary"
+            className="mb-4 font-display text-xs font-bold uppercase tracking-[0.3em] text-primary"
           >
             Capítulo VI — Usos y Oportunidades
           </motion.p>
@@ -61,21 +43,31 @@ const SectionUses = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1, delay: 0.4 }}
-            className="font-display text-4xl leading-[1.1] md:text-5xl lg:text-7xl"
+            className="font-display text-4xl font-extrabold uppercase leading-[1.1] tracking-tight text-foreground md:text-5xl lg:text-7xl"
           >
             Más que un
             <br />
-            <span className="text-gradient-gold">día de partido.</span>
+            <span className="text-primary">día de partido.</span>
           </motion.h2>
 
-          <div className="mt-16 flex flex-wrap justify-center gap-4">
+          {/* Image */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="mt-12 w-full max-w-4xl overflow-hidden rounded-xl shadow-lg"
+          >
+            <img src={stadiumMatchday} alt="Día de partido" className="h-64 w-full object-cover md:h-80" />
+          </motion.div>
+
+          <div className="mt-12 flex flex-wrap justify-center gap-3">
             {uses.map((use, i) => (
               <motion.span
                 key={i}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: 0.8 + i * 0.12 }}
-                className="rounded-full border border-primary/20 bg-primary/5 px-6 py-3 text-sm font-light text-foreground/90 backdrop-blur-sm transition-colors duration-300 hover:border-primary/50 hover:bg-primary/10"
+                className="rounded-full border border-primary/20 bg-primary/5 px-6 py-3 text-sm font-medium text-foreground/80 transition-colors duration-300 hover:border-primary/50 hover:bg-primary/10"
               >
                 {use}
               </motion.span>
@@ -86,41 +78,37 @@ const SectionUses = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 1.5 }}
-            className="mt-16 max-w-lg text-lg font-light leading-relaxed text-muted-foreground"
+            className="mt-12 max-w-lg text-lg font-light leading-relaxed text-muted-foreground"
           >
             Un estadio que genera valor{" "}
-            <span className="font-medium text-foreground">cada día del año.</span>
+            <span className="font-semibold text-foreground">cada día del año.</span>
           </motion.p>
 
           {/* CTA Block */}
-          <div ref={ctaRef} className="mt-24 w-full max-w-3xl">
+          <div ref={ctaRef} className="mt-20 w-full max-w-3xl">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={ctaInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8 }}
-              className="rounded-2xl border border-primary/15 bg-card/60 px-8 py-12 backdrop-blur-md"
+              className="rounded-xl border border-border bg-card p-8 shadow-sm md:p-12"
             >
-              <h3 className="font-display text-2xl text-foreground md:text-3xl">
+              <h3 className="font-display text-xl font-bold uppercase tracking-tight text-foreground md:text-2xl">
                 ¿Quieres formar parte del nuevo{" "}
-                <span className="text-gradient-green">Benito Villamarín</span>?
+                <span className="text-primary">Benito Villamarín</span>?
               </h3>
 
-              <div className="mt-10 grid gap-3 sm:grid-cols-2">
+              <div className="mt-8 grid gap-3 sm:grid-cols-2">
                 {ctaButtons.map((btn, i) => (
                   <motion.button
                     key={i}
                     initial={{ opacity: 0, y: 20 }}
                     animate={ctaInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
-                    onClick={() => openModal(btn.interest)}
-                    className="group rounded-lg border border-border bg-secondary/30 px-6 py-4 text-left text-sm font-medium text-foreground transition-all duration-300 hover:border-primary/50 hover:bg-primary/10"
+                    onClick={() => { setModalInterest(btn.interest); setModalOpen(true); }}
+                    className="group rounded-md border border-border px-6 py-4 text-left text-sm font-medium text-foreground transition-all duration-300 hover:border-primary hover:bg-primary/5"
                   >
-                    <span className="transition-colors group-hover:text-primary">
-                      {btn.label}
-                    </span>
-                    <span className="ml-2 inline-block text-primary opacity-0 transition-all group-hover:translate-x-1 group-hover:opacity-100">
-                      →
-                    </span>
+                    <span className="transition-colors group-hover:text-primary">{btn.label}</span>
+                    <span className="ml-2 inline-block text-primary opacity-0 transition-all group-hover:translate-x-1 group-hover:opacity-100">→</span>
                   </motion.button>
                 ))}
               </div>
@@ -128,12 +116,7 @@ const SectionUses = () => {
           </div>
         </div>
       </section>
-
-      <ContactModal
-        isOpen={modalOpen}
-        onClose={() => setModalOpen(false)}
-        interestType={modalInterest}
-      />
+      <ContactModal isOpen={modalOpen} onClose={() => setModalOpen(false)} interestType={modalInterest} />
     </>
   );
 };

@@ -57,6 +57,14 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        /* Betis brand colors as direct utilities */
+        betis: {
+          green: "#009B48",
+          dark: "#1A1A1A",
+          gray: "#666666",
+          light: "#F5F5F5",
+          gold: "#C8A951",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -64,7 +72,7 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        display: ['DM Serif Display', 'Georgia', 'serif'],
+        display: ['Montserrat', 'Inter', 'system-ui', 'sans-serif'],
         body: ['Inter', 'system-ui', 'sans-serif'],
       },
       keyframes: {
