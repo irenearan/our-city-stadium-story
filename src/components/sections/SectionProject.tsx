@@ -1,12 +1,12 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import interiorImg from "@/assets/betis-interior.jpg";
+import stadiumHospitality from "@/assets/stadium-hospitality.jpg";
 
 const purposes = [
-  { icon: "🎯", text: "Enhance fan experience" },
-  { icon: "📈", text: "Expand commercial opportunities" },
-  { icon: "🌍", text: "Elevate international positioning" },
-  { icon: "🤝", text: "Strengthen institutional relationships" },
+  { icon: "🎯", text: "Elevar la experiencia del aficionado" },
+  { icon: "📈", text: "Expandir oportunidades comerciales" },
+  { icon: "🌍", text: "Fortalecer el posicionamiento internacional" },
+  { icon: "🤝", text: "Consolidar relaciones institucionales" },
 ];
 
 const SectionProject = () => {
@@ -21,8 +21,8 @@ const SectionProject = () => {
     >
       <div className="absolute inset-0">
         <img
-          src={interiorImg}
-          alt="Stadium interior render"
+          src={stadiumHospitality}
+          alt="Zona hospitality del nuevo estadio"
           className="h-full w-full object-cover opacity-20"
         />
         <div className="absolute inset-0 bg-gradient-to-l from-background via-background/75 to-background/50" />
@@ -36,7 +36,7 @@ const SectionProject = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mb-4 font-body text-xs font-semibold uppercase tracking-[0.4em] text-primary"
           >
-            Chapter IV — The Project
+            Capítulo IV — El Proyecto
           </motion.p>
 
           <motion.h2
@@ -45,9 +45,9 @@ const SectionProject = () => {
             transition={{ duration: 1, delay: 0.4 }}
             className="font-display text-4xl leading-[1.1] md:text-5xl lg:text-6xl"
           >
-            Architecture
+            Arquitectura
             <br />
-            <span className="text-gradient-gold">With Purpose.</span>
+            <span className="text-gradient-gold">con propósito.</span>
           </motion.h2>
 
           <motion.p
@@ -56,9 +56,9 @@ const SectionProject = () => {
             transition={{ duration: 0.8, delay: 0.7 }}
             className="mt-8 text-base font-light leading-relaxed text-muted-foreground md:text-lg"
           >
-            Every line has meaning.
+            Cada línea tiene significado.
             <br />
-            Every space has intention.
+            Cada espacio tiene intención.
           </motion.p>
         </div>
 
@@ -69,7 +69,7 @@ const SectionProject = () => {
             transition={{ duration: 0.6, delay: 0.8 }}
             className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground"
           >
-            Designed to
+            Diseñado para
           </motion.p>
 
           {purposes.map((p, i) => (
