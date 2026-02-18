@@ -7,9 +7,9 @@ const SectionEvolution = () => {
   const isInView = useInView(ref, { once: true, margin: "-20%" });
 
   const lines = [
-    "Football evolves.",
-    "Cities evolve.",
-    "Experiences evolve.",
+    "El fútbol evoluciona.",
+    "Las ciudades evolucionan.",
+    "Las experiencias evolucionan.",
   ];
 
   return (
@@ -21,7 +21,7 @@ const SectionEvolution = () => {
       <div className="absolute inset-0">
         <img
           src={evolutionImg}
-          alt="Stadium evolution concept"
+          alt="Concepto de evolución del estadio"
           className="h-full w-full object-cover opacity-25"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background" />
@@ -34,7 +34,7 @@ const SectionEvolution = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-4 font-body text-xs font-semibold uppercase tracking-[0.4em] text-primary"
         >
-          Chapter II — The Need to Evolve
+          Capítulo II — La necesidad de evolucionar
         </motion.p>
 
         <motion.h2
@@ -43,9 +43,9 @@ const SectionEvolution = () => {
           transition={{ duration: 1, delay: 0.4 }}
           className="max-w-3xl font-display text-4xl leading-[1.1] md:text-5xl lg:text-7xl"
         >
-          Every Legacy Demands
+          Cada legado exige
           <br />
-          <span className="text-gradient-gold">Its Next Step.</span>
+          <span className="text-gradient-gold">su siguiente paso.</span>
         </motion.h2>
 
         <div className="mt-16 flex flex-col items-center gap-4">
@@ -68,10 +68,10 @@ const SectionEvolution = () => {
           transition={{ duration: 0.8, delay: 2 }}
           className="mt-12 max-w-xl text-base font-light leading-relaxed text-muted-foreground"
         >
-          To remain a benchmark, the stadium must become more than a venue —
+          Para seguir siendo referencia, el estadio debe convertirse en algo más que un recinto —
           <br />
           <span className="font-medium text-foreground">
-            it must become a platform for the future.
+            debe convertirse en una plataforma para el futuro.
           </span>
         </motion.p>
       </div>

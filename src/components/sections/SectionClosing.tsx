@@ -1,17 +1,17 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import heroImg from "@/assets/betis-hero.jpg";
+import stadiumNight from "@/assets/stadium-night.jpg";
 
 const SectionClosing = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-20%" });
 
   const words = [
-    "This is not just construction.",
-    "It is continuity.",
-    "A new chapter.",
-    "A new symbol.",
-    "A new stage for generations to come.",
+    "Esto no es solo construcción.",
+    "Es continuidad.",
+    "Un nuevo capítulo.",
+    "Un nuevo símbolo.",
+    "Un nuevo escenario para las generaciones venideras.",
   ];
 
   return (
@@ -22,8 +22,8 @@ const SectionClosing = () => {
     >
       <div className="absolute inset-0">
         <img
-          src={heroImg}
-          alt="New Benito Villamarín at sunset"
+          src={stadiumNight}
+          alt="Nuevo Benito Villamarín de noche"
           className="h-full w-full object-cover opacity-30"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/80" />
@@ -36,7 +36,7 @@ const SectionClosing = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-4 font-body text-xs font-semibold uppercase tracking-[0.4em] text-primary"
         >
-          Chapter VII
+          Capítulo VII
         </motion.p>
 
         <motion.h2
@@ -45,9 +45,9 @@ const SectionClosing = () => {
           transition={{ duration: 1, delay: 0.4 }}
           className="font-display text-5xl leading-[1.1] md:text-6xl lg:text-8xl"
         >
-          The Future
+          El futuro
           <br />
-          <span className="text-gradient-green">Has a Home.</span>
+          <span className="text-gradient-green">tiene hogar.</span>
         </motion.h2>
 
         <div className="mt-16 flex flex-col items-center gap-3">
@@ -70,17 +70,17 @@ const SectionClosing = () => {
           transition={{ duration: 1, delay: 2.2 }}
           className="mt-16 font-display text-2xl italic text-accent md:text-3xl"
         >
-          Welcome to the New Benito Villamarín.
+          Bienvenido al Nuevo Benito Villamarín.
         </motion.p>
 
         <motion.a
-          href="#"
+          href="#section-profile"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 2.6 }}
           className="mt-12 border border-primary/40 px-10 py-4 text-xs font-semibold uppercase tracking-[0.3em] text-primary transition-all duration-500 hover:border-primary hover:bg-primary hover:text-primary-foreground"
         >
-          Discover the Project
+          Únete a la visión
         </motion.a>
 
         {/* Footer */}

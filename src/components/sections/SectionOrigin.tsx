@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import historicImg from "@/assets/betis-historic.jpg";
+import stadiumExterior from "@/assets/stadium-exterior.jpg";
 
 const SectionOrigin = () => {
   const ref = useRef(null);
@@ -12,11 +12,10 @@ const SectionOrigin = () => {
       ref={ref}
       className="relative flex min-h-screen items-center overflow-hidden"
     >
-      {/* Background */}
       <div className="absolute inset-0">
         <img
-          src={historicImg}
-          alt="Historic Betis fans"
+          src={stadiumExterior}
+          alt="Estadio Benito Villamarín"
           className="h-full w-full object-cover opacity-30"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/40" />
@@ -37,7 +36,7 @@ const SectionOrigin = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="mb-4 font-body text-xs font-semibold uppercase tracking-[0.4em] text-primary"
           >
-            Chapter I — Origin & Identity
+            Capítulo I — Origen e Identidad
           </motion.p>
 
           <motion.h1
@@ -46,9 +45,9 @@ const SectionOrigin = () => {
             transition={{ duration: 1, delay: 0.5 }}
             className="font-display text-5xl leading-[1.1] md:text-6xl lg:text-7xl"
           >
-            More Than a Club.
+            Más que un club.
             <br />
-            <span className="text-gradient-green">A Living Legacy.</span>
+            <span className="text-gradient-green">Un legado vivo.</span>
           </motion.h1>
 
           <motion.p
@@ -57,9 +56,9 @@ const SectionOrigin = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="mt-6 text-lg font-light leading-relaxed text-muted-foreground md:text-xl"
           >
-            Real Betis Balompié is not just football.
+            El Real Betis Balompié no es solo fútbol.
             <br />
-            It is identity, city, passion and shared history.
+            Es identidad, ciudad, pasión e historia compartida.
           </motion.p>
 
           <motion.p
@@ -68,11 +67,11 @@ const SectionOrigin = () => {
             transition={{ duration: 0.8, delay: 1.1 }}
             className="mt-6 max-w-lg text-base font-light leading-relaxed text-muted-foreground/70"
           >
-            For generations, the Benito Villamarín has been home to unforgettable
-            moments. But history is not something you preserve by standing still.
+            Durante generaciones, el Benito Villamarín ha sido el hogar de momentos
+            inolvidables. Pero la historia no se preserva quedándose quieto.
             <br />
             <span className="mt-2 inline-block font-medium text-foreground italic">
-              It evolves.
+              Evoluciona.
             </span>
           </motion.p>
 
@@ -88,7 +87,7 @@ const SectionOrigin = () => {
               className="h-10 w-px bg-primary/40"
             />
             <span className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-              Scroll to continue
+              Desliza para continuar
             </span>
           </motion.div>
         </div>

@@ -1,12 +1,12 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import visionImg from "@/assets/betis-vision.jpg";
+import stadiumInteriorFans from "@/assets/stadium-interior-fans.jpg";
 
 const pillars = [
-  { label: "Open", desc: "Seamlessly connected to the city fabric" },
-  { label: "Sustainable", desc: "Net-zero ambition from day one" },
-  { label: "Integrated", desc: "A living part of Seville's urban life" },
-  { label: "365 Days", desc: "Designed for year-round activation" },
+  { label: "Abierto", desc: "Integrado en el tejido urbano de la ciudad" },
+  { label: "Sostenible", desc: "Ambición de huella cero desde el primer día" },
+  { label: "Integrado", desc: "Una parte viva de la vida urbana de Sevilla" },
+  { label: "365 Días", desc: "Diseñado para activación durante todo el año" },
 ];
 
 const SectionVision = () => {
@@ -21,8 +21,8 @@ const SectionVision = () => {
     >
       <div className="absolute inset-0">
         <img
-          src={visionImg}
-          alt="New stadium vision"
+          src={stadiumInteriorFans}
+          alt="Vista interior del nuevo estadio"
           className="h-full w-full object-cover opacity-20"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/60 to-background" />
@@ -35,7 +35,7 @@ const SectionVision = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-4 font-body text-xs font-semibold uppercase tracking-[0.4em] text-primary"
         >
-          Chapter III — The Vision
+          Capítulo III — La Visión
         </motion.p>
 
         <motion.h2
@@ -44,9 +44,9 @@ const SectionVision = () => {
           transition={{ duration: 1, delay: 0.4 }}
           className="max-w-3xl font-display text-4xl leading-[1.1] md:text-5xl lg:text-7xl"
         >
-          A New Landmark
+          Un nuevo hito
           <br />
-          <span className="text-gradient-green">for Seville.</span>
+          <span className="text-gradient-green">para Sevilla.</span>
         </motion.h2>
 
         <motion.p
@@ -55,11 +55,11 @@ const SectionVision = () => {
           transition={{ duration: 0.8, delay: 0.7 }}
           className="mt-8 max-w-xl text-base font-light leading-relaxed text-muted-foreground md:text-lg"
         >
-          The new Benito Villamarín will redefine what a stadium can be.
+          El nuevo Benito Villamarín redefinirá lo que un estadio puede ser.
           <br />
-          This is not just a stadium.{" "}
+          Esto no es solo un estadio.{" "}
           <span className="font-medium text-foreground italic">
-            It is an ecosystem.
+            Es un ecosistema.
           </span>
         </motion.p>
 
