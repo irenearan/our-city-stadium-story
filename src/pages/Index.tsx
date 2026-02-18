@@ -1,4 +1,5 @@
 import ScrollProgress from "@/components/ScrollProgress";
+import SectionBillboard from "@/components/sections/SectionBillboard";
 import SectionOrigin from "@/components/sections/SectionOrigin";
 import SectionEvolution from "@/components/sections/SectionEvolution";
 import SectionVision from "@/components/sections/SectionVision";
@@ -12,6 +13,7 @@ const Index = () => {
   return (
     <main className="bg-background">
       <ScrollProgress />
+      <SectionBillboard />
       <SectionOrigin />
       <SectionEvolution />
       <SectionVision />
